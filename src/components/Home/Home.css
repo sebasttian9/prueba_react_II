@@ -1,0 +1,24 @@
+.imagenFondo{
+    background-image: url('../../assets/fondo2.jpg');
+    width: 100%;
+    height: 15rem;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* gap: 10px; */
+}
+
+.cardsHome{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem,1fr));
+    gap: 1rem;
+    grid-auto-rows: 18rem;
+    grid-auto-flow: dense;
+    /* flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center; */
+}
