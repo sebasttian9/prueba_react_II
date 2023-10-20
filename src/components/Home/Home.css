@@ -14,8 +14,8 @@
 .cardsHome{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(18rem,1fr));
-    gap: 1rem;
-    grid-auto-rows: 18rem;
+    gap: 2rem;
+    /* grid-auto-rows: 25rem; */
     grid-auto-flow: dense;
     /* flex-wrap: wrap;
     gap: 1rem;

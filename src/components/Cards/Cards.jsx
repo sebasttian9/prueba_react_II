@@ -10,7 +10,7 @@ const Cards = () => {
             pizzas.map(pizza=>(
 
                 <Card className='cardsPizza'>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={pizza.img} />
                 <Card.Body>
                 <Card.Title>Card Title</Card.Title>
                 <Card.Text>
