@@ -1,23 +1,56 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './Cards.css'
-
-import pizzas from '../../assets/pizzas.json'
+import { CarritoContext } from '../Context/CarritoContext';
+import { useContext } from 'react';
+import { CardBody, CardFooter, CardText } from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
+// import pizzas from '../../assets/pizzas.json'
 
 const Cards = () => {
+
+const {pizzas,data,setData,CarroAdd}  = useContext(CarritoContext);
+const navigate = useNavigate();
+
+         
+const VerDetalle = (id) => {
+
+    if(id==''){
+        alert('id no existe!!');
+        return;
+    }
+
+    navigate(`/pizza/${id}`);
+}
+
   return (
 
             pizzas.map(pizza=>(
 
-                <Card className='cardsPizza'>
+                <Card className='cardsPizza' key={pizza.id}>
                 <Card.Img variant="top" src={pizza.img} />
                 <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>{pizza.name}</Card.Title>
+                <hr />
                 <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
+                        <p className='Ingredientes'>Ingredientes: </p>
+                        <ul>
+                        {
+                            pizza.ingredients.map(ingre=>(
+                                <li>{ingre}</li>
+                            ))
+                        }
+                        </ul>
+                        <hr />
+
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <CardText className='precio'>
+                    $ {pizza.price}
+                </CardText>
+                <CardBody className='botonesCard'>
+                    <Button variant="info" onClick={()=> VerDetalle(pizza.id)}>Ver mas</Button>
+                    <Button variant="danger" onClick={()=> CarroAdd(pizza)}>Añadir</Button>
+                </CardBody>
                 </Card.Body>
             </Card>
             ))
