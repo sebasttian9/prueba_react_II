@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 import { CardBody, CardFooter, CardText } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import './InfoPizza.css'
+import { Toaster } from 'sonner';
 
 const InfoPizza = () => {
 
@@ -60,6 +61,7 @@ useEffect(() => {
             </section></>)
             }
           </main>
+          <Toaster richColors closeButton/>
     </div>
   )
 }
