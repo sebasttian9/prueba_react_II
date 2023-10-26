@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 import pizzasData from '../../assets/pizzas.json'
+import { toast } from 'sonner';
 
 export const CarritoContext = createContext();
 
@@ -49,6 +50,8 @@ const CarritoProvider = ({ children }) => {
         
         
     }
+    toast.success('Producto Agregado al Carrito!')
+
 } 
 
 
